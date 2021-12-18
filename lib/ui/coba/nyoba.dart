@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lumen_flutter/ui/fundamental/anonymouse_method.dart';
 import 'package:lumen_flutter/ui/fundamental/state_full_widget.dart';
 
 class NyobaPage extends StatelessWidget {
@@ -63,6 +64,26 @@ class NyobaPage extends StatelessWidget {
       ),
     );
 
+    final tombolAnonymouseMethod = Container(
+      width: MediaQuery.of(context).size.width,
+      // width: 200,
+      height: 45,
+      child: MaterialButton(
+        minWidth: 10.0,
+        height: 42.0,
+        onPressed: () {
+          // Navigator.of(context).pushNamed(NyobaPage.tag);
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => anonymouseMethod()));
+        },
+        color: Colors.lightBlueAccent,
+        child: Text(
+          'Anonymouse Method',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+
     final body = Container(
       decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -98,6 +119,10 @@ class NyobaPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             tombolNyoba,
+            SizedBox(
+              height: 10,
+            ),
+            tombolAnonymouseMethod,
           ],
         ),
       ),
