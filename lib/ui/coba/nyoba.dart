@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lumen_flutter/ui/fundamental/anonymouse_method.dart';
+import 'package:lumen_flutter/ui/fundamental/list_listview.dart';
 import 'package:lumen_flutter/ui/fundamental/state_full_widget.dart';
 
 class NyobaPage extends StatelessWidget {
@@ -41,7 +42,7 @@ class NyobaPage extends StatelessWidget {
     // );
 
     final barAtas = AppBar(
-      title: Text("Main Menus"),
+      title: Text("Flutter Fundamental"),
     );
 
     final tombolNyoba = Container(
@@ -53,8 +54,8 @@ class NyobaPage extends StatelessWidget {
         height: 42.0,
         onPressed: () {
           // Navigator.of(context).pushNamed(NyobaPage.tag);
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => BelajarStatefull()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => BelajarStatefull()));
         },
         color: Colors.lightBlueAccent,
         child: Text(
@@ -73,12 +74,30 @@ class NyobaPage extends StatelessWidget {
         height: 42.0,
         onPressed: () {
           // Navigator.of(context).pushNamed(NyobaPage.tag);
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => anonymouseMethod()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => anonymouseMethod()));
         },
         color: Colors.lightBlueAccent,
         child: Text(
           'Anonymouse Method',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+
+    final tombolListView = Container(
+      width: MediaQuery.of(context).size.width,
+      height: 45,
+      child: MaterialButton(
+        minWidth: 10.0,
+        height: 42.0,
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => ListListView()));
+        },
+        color: Colors.lightBlue,
+        child: Text(
+          'List dan List View',
           style: TextStyle(color: Colors.white),
         ),
       ),
@@ -123,6 +142,10 @@ class NyobaPage extends StatelessWidget {
               height: 10,
             ),
             tombolAnonymouseMethod,
+            SizedBox(
+              height: 10,
+            ),
+            tombolListView,
           ],
         ),
       ),
