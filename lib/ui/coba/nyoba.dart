@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lumen_flutter/ui/fundamental/anonymouse_method.dart';
 import 'package:lumen_flutter/ui/fundamental/list_listview.dart';
 import 'package:lumen_flutter/ui/fundamental/state_full_widget.dart';
+import 'package:lumen_flutter/ui/fundamental/text_style.dart';
 
 class NyobaPage extends StatelessWidget {
   static String tag = 'nyoba';
@@ -103,6 +104,24 @@ class NyobaPage extends StatelessWidget {
       ),
     );
 
+    final tombolTextStyle = Container(
+      width: MediaQuery.of(context).size.width,
+      height: 45,
+      child: MaterialButton(
+        minWidth: 10.0,
+        height: 42.0,
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => BelajarTextStyle()));
+        },
+        color: Colors.lightBlue,
+        child: Text(
+          'Text Style',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+
     final body = Container(
       decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -146,6 +165,10 @@ class NyobaPage extends StatelessWidget {
               height: 10,
             ),
             tombolListView,
+            SizedBox(
+              height: 10,
+            ),
+            tombolTextStyle,
           ],
         ),
       ),
