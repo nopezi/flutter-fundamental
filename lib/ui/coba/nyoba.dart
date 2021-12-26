@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lumen_flutter/ui/fundamental/animatedcontainer_gesturedetector.dart';
 import 'package:lumen_flutter/ui/fundamental/anonymouse_method.dart';
+import 'package:lumen_flutter/ui/fundamental/flexible_layout.dart';
 import 'package:lumen_flutter/ui/fundamental/list_listview.dart';
 import 'package:lumen_flutter/ui/fundamental/state_full_widget.dart';
 import 'package:lumen_flutter/ui/fundamental/text_style.dart';
@@ -122,6 +124,42 @@ class NyobaPage extends StatelessWidget {
       ),
     );
 
+    final tombolAnimatedContainer = Container(
+      width: MediaQuery.of(context).size.width,
+      height: 45,
+      child: MaterialButton(
+        minWidth: 10.0,
+        height: 42.0,
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => AnimatedGesture()));
+        },
+        color: Colors.lightBlue,
+        child: Text(
+          'Animated Container dan Gesture Detector',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+
+    final tombolFlexibleWidget = Container(
+      width: MediaQuery.of(context).size.width,
+      height: 45,
+      child: MaterialButton(
+        minWidth: 10.0,
+        height: 42.0,
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => BelajarFlexibleWidget()));
+        },
+        color: Colors.lightBlue,
+        child: Text(
+          'Flexyble Widget',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+
     final body = Container(
       decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -153,22 +191,34 @@ class NyobaPage extends StatelessWidget {
                 ]),
             boxShadow: []),
         margin: EdgeInsets.fromLTRB(40, 35, 40, 50),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            tombolNyoba,
-            SizedBox(
-              height: 10,
+        child: ListView(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                tombolNyoba,
+                SizedBox(
+                  height: 10,
+                ),
+                tombolAnonymouseMethod,
+                SizedBox(
+                  height: 10,
+                ),
+                tombolListView,
+                SizedBox(
+                  height: 10,
+                ),
+                tombolTextStyle,
+                SizedBox(
+                  height: 10,
+                ),
+                tombolAnimatedContainer,
+                SizedBox(
+                  height: 10,
+                ),
+                tombolFlexibleWidget
+              ],
             ),
-            tombolAnonymouseMethod,
-            SizedBox(
-              height: 10,
-            ),
-            tombolListView,
-            SizedBox(
-              height: 10,
-            ),
-            tombolTextStyle,
           ],
         ),
       ),
