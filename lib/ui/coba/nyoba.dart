@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:lumen_flutter/core/models/tombol_fundamental.dart';
 import 'package:lumen_flutter/ui/fundamental/animatedcontainer_gesturedetector.dart';
 import 'package:lumen_flutter/ui/fundamental/anonymouse_method.dart';
 import 'package:lumen_flutter/ui/fundamental/flexible_layout.dart';
@@ -254,6 +257,8 @@ class NyobaPage extends StatelessWidget {
     //     mainAxisAlignment: MainAxisAlignment.center,
     //     children: [Text("nyoba halaman")],
     //   ),)
+
+    print(tombolFundamental().dataMenu()[0]);
 
     return Scaffold(
       appBar: barAtas,
