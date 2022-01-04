@@ -1,8 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:lumen_flutter/core/models/tombol_fundamental.dart';
 import 'package:lumen_flutter/ui/fundamental/animatedcontainer_gesturedetector.dart';
 import 'package:lumen_flutter/ui/fundamental/anonymouse_method.dart';
 import 'package:lumen_flutter/ui/fundamental/flexible_layout.dart';
 import 'package:lumen_flutter/ui/fundamental/list_listview.dart';
+import 'package:lumen_flutter/ui/fundamental/stack_align_widget.dart';
 import 'package:lumen_flutter/ui/fundamental/state_full_widget.dart';
 import 'package:lumen_flutter/ui/fundamental/text_style.dart';
 
@@ -160,6 +164,26 @@ class NyobaPage extends StatelessWidget {
       ),
     );
 
+    final tombolStackAlignWidget = Container(
+      width: MediaQuery.of(context).size.width,
+      height: 45,
+      child: MaterialButton(
+        minWidth: 10.0,
+        height: 42.0,
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => BelajarStackAlignWidget()));
+        },
+        color: Colors.lightBlue,
+        child: Text(
+          'Stack Align Widget',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+
     final body = Container(
       decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -216,7 +240,11 @@ class NyobaPage extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                tombolFlexibleWidget
+                tombolFlexibleWidget,
+                SizedBox(
+                  height: 10,
+                ),
+                tombolStackAlignWidget
               ],
             ),
           ],
@@ -229,6 +257,8 @@ class NyobaPage extends StatelessWidget {
     //     mainAxisAlignment: MainAxisAlignment.center,
     //     children: [Text("nyoba halaman")],
     //   ),)
+
+    print(tombolFundamental().dataMenu()[0]);
 
     return Scaffold(
       appBar: barAtas,

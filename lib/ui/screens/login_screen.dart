@@ -1,10 +1,15 @@
+// import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lumen_flutter/core/services/auth_services.dart';
 import 'package:lumen_flutter/core/utils/toast_utils.dart';
+import 'package:lumen_flutter/ui/dinamis_api/home_api.dart';
+import 'package:lumen_flutter/ui/udemy/home.dart';
 import 'package:lumen_flutter/ui/widgets/input_field.dart';
 import 'package:lumen_flutter/ui/widgets/primary_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:lumen_flutter/ui/coba/nyoba.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -90,85 +95,162 @@ class _LoginBodyState extends State<LoginBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        //bagian header
+    final header = //bagian header
         Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height / 4,
-          color: Colors.lightBlue,
-          child: SafeArea(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Icon(
-                  Icons.vpn_key,
-                  size: 60,
-                  color: Colors.white,
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "Login Area",
-                  style: TextStyle(
-                      fontSize: 35,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
-                )
-              ],
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height / 4,
+      color: Colors.lightBlue,
+      child: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(
+              Icons.vpn_key,
+              size: 60,
+              color: Colors.white,
             ),
-          ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              "Login Area",
+              style: TextStyle(
+                  fontSize: 35,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
+            )
+          ],
         ),
+      ),
+    );
 
-        Padding(
-          padding: EdgeInsets.only(left: 20, right: 20, top: 30),
-          child: Column(
-            children: <Widget>[
-              InputField(
-                action: TextInputAction.done,
-                type: TextInputType.text,
-                controller: usernameController,
-                hinText: "Username",
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              InputField(
-                action: TextInputAction.done,
-                type: TextInputType.text,
-                controller: passwordController,
-                hinText: "Password",
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: 45,
-                child: PrimaryButton(
-                  color: Colors.lightBlue,
-                  text: "Login",
-                  onClick: () {},
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: 45,
-                child: PrimaryButton(
-                  color: Colors.grey,
-                  text: "Register",
-                  onClick: () {},
-                ),
-              ),
-            ],
+    final formUsername = InputField(
+      action: TextInputAction.done,
+      type: TextInputType.text,
+      controller: usernameController,
+      hinText: "Username",
+    );
+
+    final formPassword = InputField(
+      action: TextInputAction.done,
+      type: TextInputType.text,
+      controller: passwordController,
+      hinText: "Password",
+    );
+
+    final tombolRegister = Container(
+      width: MediaQuery.of(context).size.width,
+      height: 45,
+      child: PrimaryButton(
+        color: Colors.grey,
+        text: "Register",
+        onClick: () {},
+      ),
+    );
+
+    final tombolNyoba = Container(
+      width: MediaQuery.of(context).size.width,
+      height: 45,
+      child: MaterialButton(
+        minWidth: 200.0,
+        height: 42.0,
+        onPressed: () {
+          // Navigator.of(context).pushNamed(NyobaPage.tag);
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => NyobaPage()));
+        },
+        color: Colors.lightBlueAccent,
+        child: Text(
+          'Fundamental',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+
+    final tombolFundamental = Container(
+      width: MediaQuery.of(context).size.width,
+      height: 45,
+      child: ElevatedButton(
+        // minWidth: 200.0,
+        // height: 42.0,
+        onPressed: () {
+          // Navigator.of(context).pushNamed(NyobaPage.tag);
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => HomeApi()));
+        },
+        // color: Colors.lightBlueAccent,
+        child: Text(
+          'Belajar Api',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+
+    final tombolLogin = Container(
+      width: MediaQuery.of(context).size.width,
+      height: 45,
+      child: PrimaryButton(
+        color: Colors.lightBlue,
+        text: "Login",
+        onClick: () {},
+      ),
+    );
+
+    final tombolUdemy = Container(
+      width: MediaQuery.of(context).size.width,
+      height: 45,
+      child: ElevatedButton(
+        // minWidth: 200.0,
+        // height: 42.0,
+        onPressed: () {
+          // Navigator.of(context).pushNamed(NyobaPage.tag);
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => HomeUdemy()));
+        },
+        // color: Colors.lightBlueAccent,
+        child: Text(
+          'Udemy Flutter',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+
+    final padding = Padding(
+      padding: EdgeInsets.only(left: 20, right: 20, top: 30),
+      child: Column(
+        children: <Widget>[
+          formUsername,
+          SizedBox(
+            height: 10,
           ),
-        )
-      ],
+          formPassword,
+          SizedBox(
+            height: 15,
+          ),
+          tombolLogin,
+          SizedBox(
+            height: 15,
+          ),
+          tombolRegister,
+          SizedBox(
+            height: 15,
+          ),
+          tombolNyoba,
+          SizedBox(
+            height: 15,
+          ),
+          tombolFundamental,
+          SizedBox(
+            height: 15,
+          ),
+          tombolUdemy
+        ],
+      ),
+    );
+
+    return Column(
+      children: <Widget>[header, padding],
     );
   }
 }
