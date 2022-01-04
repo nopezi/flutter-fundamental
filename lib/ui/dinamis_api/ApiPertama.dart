@@ -40,14 +40,14 @@ class _ApiPertamaState extends State<ApiPertama> {
     // var response =
     //     await http.get(APIS.profile, headers: {'authorization': basicAuth});
     http.Response r = await http.get(APIS.profile, headers: kepala);
-    print('response');
+    // print('response');
   }
 
   @override
   void initState() {
     super.initState();
     cobaData();
-    cobaAuth();
+    // cobaAuth();
   }
 
   Widget build(BuildContext context) {
