@@ -163,11 +163,67 @@ class Home extends StatelessWidget {
         )),
   );
 
+  final bodyMenuIconClean = Center(
+    child: Container(
+        color: Colors.grey[200],
+        height: 80,
+        width: double.infinity,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconWithLabel(
+              icon: Icons.call,
+              title: "CALL",
+            ),
+            IconWithLabel(
+              icon: Icons.navigation,
+              title: "ROUTE",
+            ),
+            IconWithLabel(
+              icon: Icons.share,
+              title: "SHARE",
+            ),
+          ],
+        )),
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appbar,
-      body: bodyMenuIcon,
+      body: bodyMenuIconClean,
+    );
+  }
+}
+
+class IconWithLabel extends StatelessWidget {
+  const IconWithLabel({
+    Key key,
+    @required this.icon,
+    @required this.title,
+  }) : super(key: key);
+
+  final IconData icon;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          icon,
+          size: 30,
+          color: Colors.blue,
+        ),
+        SizedBox(
+          height: 8,
+        ),
+        Text(
+          title,
+          style: TextStyle(color: Colors.blue),
+        ),
+      ],
     );
   }
 }
