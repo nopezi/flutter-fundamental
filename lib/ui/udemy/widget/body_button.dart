@@ -15,10 +15,14 @@ class BodyButton extends StatelessWidget {
             splashColor: Colors.blue,
             child: Text("Go to dashboard"),
             onPressed: () {
+              String judul = "Ini berasal dari halaman home";
               // Navigator.of(context).pushReplacement(
               //     MaterialPageRoute(builder: (context) => Dashboard()));
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (context) => Dashboard()));
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => Dashboard(
+                        // judul: judul,
+                        buttonText: "ini adalah tombol",
+                      )));
             },
           ),
         ),
