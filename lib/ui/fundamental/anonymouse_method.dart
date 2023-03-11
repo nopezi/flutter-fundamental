@@ -28,10 +28,11 @@ class _anonymouseMethodState extends State<anonymouseMethod> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(pesan),
-            RaisedButton(
-              onPressed: (){
+            ElevatedButton(
+              onPressed: () {
                 setState(() {
-                  pesan = "ini adalah text setelah tekan tombol menggunakan anonymouse method";
+                  pesan =
+                      "ini adalah text setelah tekan tombol menggunakan anonymouse method";
                 });
               },
               child: Text("Tekan saya"),

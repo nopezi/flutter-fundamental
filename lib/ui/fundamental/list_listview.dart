@@ -29,7 +29,7 @@ class _ListListViewState extends State<ListListView> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              RaisedButton(
+              ElevatedButton(
                   child: Text("Tambah Data"),
                   onPressed: () {
                     setState(() {
@@ -40,7 +40,7 @@ class _ListListViewState extends State<ListListView> {
                       counter++;
                     });
                   }),
-              RaisedButton(
+              ElevatedButton(
                   child: Text("Hapus Data"),
                   onPressed: () {
                     setState(() {

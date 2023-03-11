@@ -150,7 +150,7 @@ class _LoginBodyState extends State<LoginBody> {
         },
         color: Colors.lightBlueAccent,
         child: Text(
-          'Main Menus',
+          'Demo Menus',
           style: TextStyle(color: Colors.white),
         ),
       ),

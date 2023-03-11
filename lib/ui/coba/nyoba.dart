@@ -3,6 +3,7 @@ import 'package:lumen_flutter/ui/fundamental/animatedcontainer_gesturedetector.d
 import 'package:lumen_flutter/ui/fundamental/anonymouse_method.dart';
 import 'package:lumen_flutter/ui/fundamental/flexible_layout.dart';
 import 'package:lumen_flutter/ui/fundamental/list_listview.dart';
+import 'package:lumen_flutter/ui/fundamental/navigation_multipage/navigation_multipage.dart';
 import 'package:lumen_flutter/ui/fundamental/state_full_widget.dart';
 import 'package:lumen_flutter/ui/fundamental/text_style.dart';
 
@@ -160,6 +161,24 @@ class NyobaPage extends StatelessWidget {
       ),
     );
 
+    final tombolNavigationMultiPage = Container(
+      width: MediaQuery.of(context).size.width,
+      height: 45,
+      child: MaterialButton(
+        minWidth: 10.0,
+        height: 42.0,
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => NavigationMultipage()));
+        },
+        color: Colors.lightBlue,
+        child: Text(
+          'Navigation Multi Page',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
+
     final body = Container(
       decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -216,7 +235,11 @@ class NyobaPage extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                tombolFlexibleWidget
+                tombolFlexibleWidget,
+                SizedBox(
+                  height: 10,
+                ),
+                tombolNavigationMultiPage,
               ],
             ),
           ],
@@ -230,9 +253,6 @@ class NyobaPage extends StatelessWidget {
     //     children: [Text("nyoba halaman")],
     //   ),)
 
-    return Scaffold(
-      appBar: barAtas,
-      body: body,
-    );
+    return Scaffold(appBar: barAtas, body: body);
   }
 }

@@ -24,9 +24,10 @@ class _BelajarStatefullState extends State<BelajarStatefull> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("statefull widget biasa digunakan untuk page yang berisi data yang dapat berubah rubah"),
+            Text(
+                "statefull widget biasa digunakan untuk page yang berisi data yang dapat berubah rubah"),
             Text(number.toString()),
-            RaisedButton(
+            ElevatedButton(
               child: Text("Tambah Bilangan"),
               onPressed: tekanTombol,
             )

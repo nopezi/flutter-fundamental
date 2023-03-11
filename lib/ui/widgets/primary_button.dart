@@ -5,15 +5,12 @@ class PrimaryButton extends StatelessWidget {
   String text;
   Function onClick;
 
-  PrimaryButton({
-    @required this.color,
-    @required this.text,
-    @required this.onClick
-  });
+  PrimaryButton(
+      {@required this.color, @required this.text, @required this.onClick});
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return MaterialButton(
       onPressed: onClick,
       color: color,
       shape: RoundedRectangleBorder(
@@ -22,10 +19,7 @@ class PrimaryButton extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-          color: Colors.white,
-          fontSize: 15,
-          fontWeight: FontWeight.bold
-        ),
+            color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold),
       ),
     );
   }
