@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lumen_flutter/core/services/auth_services.dart';
 import 'package:lumen_flutter/core/utils/toast_utils.dart';
+import 'package:lumen_flutter/ui/demo_menus/Main.dart';
 import 'package:lumen_flutter/ui/widgets/input_field.dart';
 import 'package:lumen_flutter/ui/widgets/primary_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:lumen_flutter/ui/coba/nyoba.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -145,8 +145,8 @@ class _LoginBodyState extends State<LoginBody> {
         height: 42.0,
         onPressed: () {
           // Navigator.of(context).pushNamed(NyobaPage.tag);
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => NyobaPage()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => LearningMenus()));
         },
         color: Colors.lightBlueAccent,
         child: Text(
