@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:lumen_flutter/ui/demo_menus/tombolAnimatedContainer.dart';
 import 'package:lumen_flutter/ui/demo_menus/tombolAnonymouseMethod.dart';
 import 'package:lumen_flutter/ui/demo_menus/tombolAppbarGradasi.dart';
+import 'package:lumen_flutter/ui/demo_menus/tombolButtonGradasi.dart';
 import 'package:lumen_flutter/ui/demo_menus/tombolCardWidget.dart';
+import 'package:lumen_flutter/ui/demo_menus/tombolCardWidgetCustom.dart';
 import 'package:lumen_flutter/ui/demo_menus/tombolFlexibleWidget.dart';
 import 'package:lumen_flutter/ui/demo_menus/tombolListView.dart';
+import 'package:lumen_flutter/ui/demo_menus/tombolMediaQuery.dart';
 import 'package:lumen_flutter/ui/demo_menus/tombolNavigationMultiPage.dart';
 import 'package:lumen_flutter/ui/demo_menus/tombolNyoba.dart';
 import 'package:lumen_flutter/ui/demo_menus/tombolTextFieldWidget.dart';
@@ -134,6 +137,18 @@ class LearningMenus extends StatelessWidget {
                   height: 10,
                 ),
                 TombolTextFieldWidget(),
+                SizedBox(
+                  height: 10,
+                ),
+                TombolMediaQuery(),
+                SizedBox(
+                  height: 10,
+                ),
+                TombolButtonGradasi(),
+                SizedBox(
+                  height: 10,
+                ),
+                TombolCardWidgetCustom(),
               ],
             ),
           ],

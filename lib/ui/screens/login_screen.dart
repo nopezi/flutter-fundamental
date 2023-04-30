@@ -5,6 +5,9 @@ import 'package:flutter/services.dart';
 import 'package:lumen_flutter/core/services/auth_services.dart';
 import 'package:lumen_flutter/core/utils/toast_utils.dart';
 import 'package:lumen_flutter/ui/demo_menus/Main.dart';
+import 'package:lumen_flutter/ui/learning_udemy/dribble/main.dart';
+import 'package:lumen_flutter/ui/learning_udemy/dribble/presentation/app_widget.dart';
+import 'package:lumen_flutter/ui/learning_udemy/main.dart';
 import 'package:lumen_flutter/ui/widgets/input_field.dart';
 import 'package:lumen_flutter/ui/widgets/primary_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -156,6 +159,18 @@ class _LoginBodyState extends State<LoginBody> {
       ),
     );
 
+    final tombolMeniruDesign = Container(
+        width: MediaQuery.of(context).size.width,
+        height: 45.0,
+        child: PrimaryButton(
+          color: Colors.greenAccent,
+          text: "Learning Udemy",
+          onClick: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => LearningUdemy()));
+          },
+        ));
+
     final padding = Padding(
       padding: EdgeInsets.only(left: 20, right: 20, top: 30),
       child: Column(
@@ -193,6 +208,10 @@ class _LoginBodyState extends State<LoginBody> {
             height: 15,
           ),
           tombolNyoba,
+          SizedBox(
+            height: 15,
+          ),
+          tombolMeniruDesign,
         ],
       ),
     );

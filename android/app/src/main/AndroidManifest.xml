@@ -8,6 +8,7 @@
     <application
         android:name="${applicationName}"
         android:label="lumen_flutter"
+        android:requestLegacyExternalStorage="true"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
